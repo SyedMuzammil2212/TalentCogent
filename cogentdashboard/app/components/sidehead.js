@@ -8,11 +8,11 @@ const Sidehead = ({ src, role }) => {
         <div className=" h-[24px] w-[24px] rounded-full ">
           <Image src={src} className=" h-full w-full object-cover" />
         </div>
-        <div className=" font-Inter18 text-[#0A0D14] text-[14px] leading-none font-medium ">
+        <div className=" inter text-[#0A0D14] text-[14px] leading-none font-medium ">
           Talent Cogent
         </div>
       </div>
-      <div className=" font-Inter18 text-[#525866] text-[12px] leading-none ">
+      <div className=" inter text-[#525866] text-[12px] leading-none ">
         {role}
       </div>
       <div className=" w-full border-[1px] border-[#E2E4E9] my-3"></div>

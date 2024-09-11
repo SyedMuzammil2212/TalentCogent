@@ -7,14 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        Inter18: "Inter 18pt",
-        Inter24: "Inter 24pt",
-        Inter28: "Inter 28pt",
-      },
+      // fontFamily: {
+      //   Inter18: "Inter 18pt",
+      //   Inter24: "Inter 24pt",
+      //   Inter28: "Inter 28pt",
+      // },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      boxShadow: {
+        "custom-purple": "0px 24px 24px -12px rgba(162, 145, 255, 0.35)",
       },
     },
   },

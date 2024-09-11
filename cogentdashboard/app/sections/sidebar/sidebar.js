@@ -40,7 +40,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Dashboard />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -52,7 +52,7 @@ const Sidebar = () => {
               {pathname == "/dashboard" && <Rightarrow />}
             </div>
           </Link>
-          <Link href={"/dasboard/calender"}>
+          <Link href={"/dashboard/calender"}>
             <div
               className={` relative flex items-center justify-between w-full py-[12px] px-[12px] cursor-pointer gap-2 ${
                 pathname == "/dashboard/calender"
@@ -68,7 +68,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Calender />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard/calender"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -96,7 +96,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Timeoff />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard/timeoff"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -124,7 +124,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Projects />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard/projects"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -150,7 +150,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Teams />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard/teams"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -178,7 +178,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Integrations />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard/integrations"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -206,7 +206,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Benefits />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard/benefits"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -234,7 +234,7 @@ const Sidebar = () => {
               <div className=" flex items-center gap-2">
                 <Documents />
                 <div
-                  className={` font-Inter18 text-[14px] leading-none font-medium ${
+                  className={` inter text-[14px] leading-none font-medium ${
                     pathname == "/dashboard/documents"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
@@ -252,13 +252,13 @@ const Sidebar = () => {
         <div className=" flex flex-col gap-4">
           <div className=" flex items-center gap-2 px-[12px] cursor-pointer ">
             <Settings />
-            <div className=" font-Inter18 font-medium text-[#525866] text-[14px] leading-none  ">
+            <div className=" inter font-medium text-[#525866] text-[14px] leading-none  ">
               Settings
             </div>{" "}
           </div>
           <div className=" flex items-center gap-2 px-[12px] cursor-pointer ">
             <Support />
-            <div className=" font-Inter18 font-medium text-[#525866] text-[14px] leading-none  ">
+            <div className=" inter font-medium text-[#525866] text-[14px] leading-none  ">
               Support
             </div>{" "}
           </div>
