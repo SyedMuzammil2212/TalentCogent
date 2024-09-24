@@ -16,12 +16,12 @@ const Members = () => {
               </div>
         </div>
         <div className="right flex px-2 gap-4 ">
-                <div className="export flex gap-4 items-center justify-center px-4 py-2 border-2 border-[#E2E4E9] rounded-[10px] text-[#525866] font-medium">
+                <div className="export flex gap-4 items-center justify-center px-4 py-2 border-2 border-[#E2E4E9] rounded-[10px] text-[#525866] font-medium shadow-[0px_1px_2px_0px_rgba(82,88,102,0.06)]">
                     <Share/>
                 <button >Export</button>
                 </div>
 
-                <div className="Invite flex gap-4 items-center bg-[#1F3AF1] justify-center px-4 py-2 rounded-[10px] text-[#ffffff] font-medium">
+                <div className="Invite flex gap-4 items-center bg-[#1F3AF1] justify-center px-4 py-2 rounded-[10px] text-[#ffffff] font-medium shadow-[0px_1px_2px_0px_rgba(82,88,102,0.06)]">
                     <Plus/>
                 <button className='' >Invite Member</button>
                 </div>
