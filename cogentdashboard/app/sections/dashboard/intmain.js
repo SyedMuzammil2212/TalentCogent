@@ -1,7 +1,9 @@
 "use client";
 import Serach from "@/public/icons/serach";
 import React, { useState } from "react";
-
+import IntegrationCard from "@/app/components/integrationcard";
+import IntegrationDetails from "@/app/components/intcarddetails";
+import UpcomingIntegrationDetails from "@/app/components/upcomingintdetails"
 const Intmain = () => {
   const [tab, setTab] = useState(1);
   const [search, setSearch] = useState();
@@ -58,6 +60,40 @@ const Intmain = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-7 flex flex-col gap-1">
+        <p className="font-medium">Available Integrations</p>
+        <p className="text-sm text-[#525866]">
+          Access the integrated tools and apps ready for your HR tasks.
+        </p>
+      </div>
+      <div className="mt-5 flex flex-row flex-wrap gap-6">
+        {IntegrationDetails.map((integration) => (
+          <IntegrationCard
+            key={integration.id}
+            svg={integration.svg}
+            title={integration.title}
+            subtitle={integration.subtitle}
+          />
+        ))}
+      </div>
+      <div className="mt-6 lg:flex lg:flex-col lg:gap-1 ">
+        <p className="font-medium">Upcoming Integrations</p>
+        <p className="text-sm text-[#525866]">
+          Seamless collaboration and document management.
+        </p>
+      </div>
+      <div className="flex flex-row gap-6 mt-5 flex-wrap">
+         {UpcomingIntegrationDetails.map((integration)=>(
+          <IntegrationCard
+          option={true}
+          disabled={true}
+            key={integration.id}
+            svg={integration.svg}
+            title={integration.title}
+            subtitle={integration.subtitle}
+          />
+         ))} 
       </div>
     </div>
   );
