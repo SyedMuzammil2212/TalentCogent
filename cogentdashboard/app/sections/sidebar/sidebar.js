@@ -1,7 +1,7 @@
 "use client";
 import Sidehead from "@/app/components/sidehead";
 import React from "react";
-import img from "@/public/images/blueimg.png";
+import img from "@/public/images/logo1.png";
 import { usePathname } from "next/navigation";
 import Dashboard from "@/public/icons/dashboard";
 import Rightarrow from "@/public/icons/rightarrow";

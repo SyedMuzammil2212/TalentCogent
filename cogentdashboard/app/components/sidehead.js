@@ -4,12 +4,12 @@ import React from "react";
 const Sidehead = ({ src, role }) => {
   return (
     <div className="flex flex-col gap-3">
-      <div className=" flex items-center gap-3 ">
-        <div className=" h-[24px] w-[24px] rounded-full ">
+      <div className=" flex flex-col items-start gap-3 ">
+        <div className=" h-[50px] rounded-full ">
           <Image src={src} className=" h-full w-full object-cover" />
         </div>
         <div className=" inter text-[#0A0D14] text-[14px] leading-none font-medium ">
-          Talent Cogent
+          Visual Technologies
         </div>
       </div>
       <div className=" inter text-[#525866] text-[12px] leading-none ">
