@@ -136,13 +136,13 @@ const Sidebar = () => {
               {pathname == "/dashboard/projects" && <Rightarrow />}
             </div>
           </Link>
-          <Link href={"/dashboard/teams"}>
+          <Link href={"/dashboard/Teams"}>
             <div
               className={` relative flex items-center justify-between w-full py-[12px] px-[12px] cursor-pointer gap-2 ${
-                pathname == "/dashboard/teams" ? "bg-[#F6F8FA] rounded-xl" : ""
+                pathname == "/dashboard/Teams" ? "bg-[#F6F8FA] rounded-xl" : ""
               }`}
             >
-              {pathname == "/dashboard/teams" && (
+              {pathname == "/dashboard/Teams" && (
                 <div className=" absolute top-[50%] -translate-y-1/2 -left-[1rem] ">
                   <Blueleft />
                 </div>
@@ -151,7 +151,7 @@ const Sidebar = () => {
                 <Teams />
                 <div
                   className={` inter text-[14px] leading-none font-medium ${
-                    pathname == "/dashboard/teams"
+                    pathname == "/dashboard/Teams"
                       ? "text-[#0A0D14]"
                       : "text-[#525866]"
                   }  `}
@@ -159,7 +159,7 @@ const Sidebar = () => {
                   Teams
                 </div>
               </div>
-              {pathname == "/dashboard/teams" && <Rightarrow />}
+              {pathname == "/dashboard/Teams" && <Rightarrow />}
             </div>
           </Link>
           <Link href={"/dashboard/integrations"}>
