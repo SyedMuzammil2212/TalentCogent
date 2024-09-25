@@ -1,4 +1,3 @@
-import Microsoft from "@/public/icons/microsoft";
 import Settings from "@/public/icons/settings";
 import Toggle from "@/public/icons/toggle";
 import React from "react";
