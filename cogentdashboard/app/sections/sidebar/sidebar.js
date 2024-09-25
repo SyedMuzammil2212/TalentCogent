@@ -139,7 +139,7 @@ const Sidebar = () => {
           <Link href={"/dashboard/teams"}>
             <div
               className={` relative flex items-center justify-between w-full py-[12px] px-[12px] cursor-pointer gap-2 ${
-                pathname == "/dashboard/Teams" ? "bg-[#F6F8FA] rounded-xl" : ""
+                pathname == "/dashboard/teams" ? "bg-[#F6F8FA] rounded-xl" : ""
               }`}
             >
               {pathname == "/dashboard/teams" && (
@@ -250,12 +250,35 @@ const Sidebar = () => {
       </div>
       <div className=" flex flex-col items-start justify-center w-full">
         <div className=" flex flex-col gap-4">
-          <div className=" flex items-center gap-2 px-[12px] cursor-pointer ">
-            <Settings />
-            <div className=" inter font-medium text-[#525866] text-[14px] leading-none  ">
-              Settings
-            </div>{" "}
-          </div>
+          <Link href={"/dashboard/profileSettings"}>
+            <div
+              className={` relative flex items-center justify-between w-full py-[12px] px-[12px] cursor-pointer gap-2 ${
+                pathname == "/dashboard/profileSettings"
+                  ? "bg-[#F6F8FA] rounded-xl"
+                  : ""
+              }`}
+            >
+              {pathname == "/dashboard/profileSettings" && (
+                <div className=" absolute top-[50%] -translate-y-1/2 -left-[1rem] ">
+                  <Blueleft />
+                </div>
+              )}
+              <div className=" flex items-center gap-2 ">
+                <Settings />
+
+                <div
+                  className={` inter text-[14px] leading-none font-medium ${
+                    pathname == "/dashboard/profileSettings"
+                      ? "text-[#0A0D14]"
+                      : "text-[#525866]"
+                  }  `}
+                >
+                  Settings
+                </div>
+              </div>
+              {pathname == "/dashboard/profileSettings" && <Rightarrow />}
+            </div>
+          </Link>
           <div className=" flex items-center gap-2 px-[12px] cursor-pointer ">
             <Support />
             <div className=" inter font-medium text-[#525866] text-[14px] leading-none  ">
