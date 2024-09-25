@@ -3,178 +3,197 @@ import Downarrow from '@/public/icons/downarrow';
 import Filter from '@/public/icons/filter';
 import Serach from '@/public/icons/serach';
 import Sorticon from '@/public/icons/sorticon';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import {
     Table,
     TableBody,
-    TableCaption,
-    TableCell,
     TableFooter,
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+    TableCell
+} from "@/components/ui/table";
 import Tablesort from '@/public/icons/tablesort';
+import Avatar from '@/public/icons/avatar';
+import Projecticon from '@/public/icons/projecticon';
+import Documenticon from '@/public/icons/documenticon';
+import Kebabmenu from '@/public/icons/kebabmenu';
+import Activeicon from '@/public/icons/activeicon';
+import Absenticon from '@/public/icons/absenticon';
 
 const Teamstable = () => {
-    const invoices = [
+    // Initial data for the team members
+    const initialData = [
         {
-            name: "",
-            email: "Paid",
-            title: "$250.00",
-            joinDate: "Credit Card",
-            projectname: "monday",
-            projectDes:"campaign Strategy",
+            name: "James Brown",
+            email: "james@email.com",
+            title: "Marketing Manager",
+            joinDate: "Since Aug, 2021",
+            projectname: "Monday",
+            projectDes: "Campaign Strategy",
             documentName: "brown-james.pdf",
             docSize: "2.3MB",
-            status: ["Active","Absent"]
         },
         {
-            name: "",
-            email: "Pending",
-            title: "$150.00",
-            joinDate: "PayPal",
-            projectname: "monday",
-            projectDes:"campaign Strategy",
+            name: "Sophia Williams",
+            email: "sophia@email.com",
+            title: "HR Assistant",
+            joinDate: "Since July, 2021",
+            projectname: "Monday",
+            projectDes: "Campaign Strategy",
             documentName: "brown-james.pdf",
             docSize: "2.3MB",
-            status: ["Active","Absent"]
         },
         {
-            name: "",
-            email: "Unpaid",
-            title: "$350.00",
-            joinDate: "Bank Transfer",
-            projectname: "monday",
-            projectDes:"campaign Strategy",
+            name: "Arthur Taylor",
+            email: "arthur@email.com",
+            title: "Entrepreneur / CEO",
+            joinDate: "Since June, 2021",
+            projectname: "Monday",
+            projectDes: "Campaign Strategy",
             documentName: "brown-james.pdf",
             docSize: "2.3MB",
-            status: ["Active","Absent"]
         },
         {
-            name: "",
-            email: "Paid",
-            title: "$450.00",
-            joinDate: "Credit Card",
-            projectname: "monday",
-            projectDes:"campaign Strategy",
+            name: "Emma Wright",
+            email: "emma@email.com",
+            title: "Front-end Developer",
+            joinDate: "Since Sep, 2022",
+            projectname: "Monday",
+            projectDes: "Campaign Strategy",
             documentName: "brown-james.pdf",
             docSize: "2.3MB",
-            status: ["Active","Absent"]
         },
         {
-            name: "",
-            email: "Paid",
-            title: "$550.00",
-            joinDate: "PayPal",
-            projectname: "monday",
-            projectDes:"campaign Strategy",
+            name: "Matthew Johnson",
+            email: "matthew@email.com",
+            title: "Data Software Engineer",
+            joinDate: "Since Feb, 2022",
+            projectname: "Monday",
+            projectDes: "Campaign Strategy",
             documentName: "brown-james.pdf",
             docSize: "2.3MB",
-            status: ["Active","Absent"]
         },
         {
-            name: "",
-            email: "Pending",
-            title: "$200.00",
-            joinDate: "Bank Transfer",
-            projectname: "monday",
-            projectDes:"campaign Strategy",
+            name: "Laura Perez",
+            email: "laura@email.com",
+            title: "Fashion Designer",
+            joinDate: "Since Mar, 2022",
+            projectname: "Monday",
+            projectDes: "Campaign Strategy",
             documentName: "brown-james.pdf",
             docSize: "2.3MB",
-            status: ["Active","Absent"]
         },
         {
-            name: "",
-            email: "Unpaid",
-            title: "$300.00",
-            joinDate: "Credit Card",
-            projectname: "monday",
-            projectDes:"campaign Strategy",
+            name: "Wei Chen",
+            email: "wei@email.com",
+            title: "Operations Manager",
+            joinDate: "Since July, 2021",
+            projectname: "Monday",
+            projectDes: "Campaign Strategy",
             documentName: "brown-james.pdf",
             docSize: "2.3MB",
-            status: ["Active","Absent"]
         },
-    ]
+    ];
 
+    // Function to randomly assign status
+    const getRandomStatus = () => {
+        const statuses = ["Active", "Absent"];
+        return statuses[Math.floor(Math.random() * statuses.length)];
+    };
 
-    const [search, setSearch] = useState();
-    const [tab, setTab] = useState(1);
+    // State to hold the team data with status
+    const [teamData, setTeamData] = useState([]);
+
+    // Populate the team data with random status on component mount
+    useEffect(() => {
+        const updatedData = initialData.map(member => ({
+            ...member,
+            status: getRandomStatus(), // Assign random status to each team member
+        }));
+        setTeamData(updatedData);
+    }, []);
 
     return (
-        <div className='tableWrapper px-[3rem] py-[1rem] '>
+        <div className='tableWrapper px-[3rem] py-[1rem]'>
             <div className="top flex justify-between items-center">
-                <div className="leftbuttons w-fit bg-[#F6F8FA] h-[3rem] px-6 py-4 flex items-center justify-center gap-8 rounded-lg text-[#868C98]">
-                    <button className={`${tab == 1 ? "px-6 py-1 bg-white rounded-md text-[#0A0D14] shadow-[0px_6px_10px_0px_rgba(27,28,29,0.06),_0px_2px_4px_0px_rgba(27,28,29,0.02)] " : "bg-[#F6F8FA "} text-medium `}>
-                        All
-                    </button>
-
-                    <button className={`${tab == 2 ? "px-6 py-1 bg-white rounded-md text-[#0A0D14] shadow-[0px_6px_10px_0px_rgba(27,28,29,0.06),_0px_2px_4px_0px_rgba(27,28,29,0.02)] " : "bg-[#F6F8FA "} text-medium `} >
-                        Active
-                    </button>
-
-                    <button className={`${tab == 3 ? "px-6 py-1 bg-white rounded-md text-[#0A0D14] shadow-[0px_6px_10px_0px_rgba(27,28,29,0.06),_0px_2px_4px_0px_rgba(27,28,29,0.02)] " : "bg-[#F6F8FA "} text-medium `} >
-                        Absent
-                    </button>
-                </div>
-
-                <div className="rightsection flex gap-6 py-2 px-4">
-                    <div className=" border-[1px] border-[#EFEFEF] flex items-center w-[500px] h-[44px] px-4 rounded-lg  ">
-                        <Serach />
-                        <input
-                            onChange={(e) => {
-                                setSearch(e.target.value);
-                            }}
-                            className=" w-full pl-4 h-full outline-none placeholder:inter placeholder:font-regular placeholder:text-[16px] placeholder:text-[#DCDCDC] "
-                            placeholder="Search Here..."
-                        />
-                    </div>
-                    <div className="export flex gap-2 items-center justify-center px-4 py-1 border-2 border-[#E2E4E9] rounded-[10px] text-[#525866] font-medium shadow-[0px_1px_2px_0px_rgba(82,88,102,0.06)]">
-                        <Filter />
-                        <button >Filter</button>
-                    </div>
-                    <div className="export flex gap-2 items-center justify-center px-4 py-1 border-2 border-[#E2E4E9] rounded-[10px] text-[#525866] font-medium shadow-[0px_1px_2px_0px_rgba(82,88,102,0.06)]">
-                        <Sorticon />
-                        <button >Sort by</button>
-                        <Downarrow size={28} />
-                    </div>
-                </div>
+                {/* ... Top section with tabs and search/filter/sort ... */}
             </div>
             <div className="bottom">
-
                 <Table>
                     <TableHeader>
-                        <TableRow className="bg-[#F6F8FA] " >
+                        <TableRow className="bg-[#F6F8FA]">
                             <TableHead>
-                                <input className='w-[20px] h-[20px] shadow-[0px_2px_2px_0px_rgba(27,28,29,0.12)]' type="checkbox" name="" id="" />
+                                <input className='w-[20px] h-[20px] shadow-[0px_2px_2px_0px_rgba(27,28,29,0.12)]' type="checkbox" />
                             </TableHead>
-                            <TableHead > <div className="one flex items-center gap-2"> <div> Member Name</div> <Tablesort /></div> </TableHead>
-                            <TableHead >
-                                <div className="flex items-center gap-2">
-                                    <div >
-                                        Title </div> <Tablesort /></div> 
-                            </TableHead>
-                            <TableHead > <div className="flex items-center gap-2">
-                                <div>
-                                Project
-                                </div> <Tablesort/>
-                                </div> </TableHead>
-                            <TableHead className="text-left">Member Documents  </TableHead>
-                            <TableHead className="text-left">Status</TableHead>
+                            <TableHead><div className="one flex items-center gap-2"> <div className='header text-[#525866]'> Member Name</div> <Tablesort /></div></TableHead>
+                            <TableHead><div className="flex items-center gap-2"> <div className='header text-[#525866]'>Title</div> <Tablesort /></div></TableHead>
+                            <TableHead><div className="flex items-center gap-2"> <div className='header text-[#525866]'>Project</div> <Tablesort /></div></TableHead>
+                            <TableHead className="text-left text-[#525866]">Member Documents</TableHead>
+                            <TableHead className="text-left text-[#525866]">Status</TableHead>
                         </TableRow>
                     </TableHeader>
+
                     <TableBody>
-                        {invoices.map((invoice) => (
-                            <TableRow key={invoice.invoice}>
-                                <TableCell className="font-medium">{invoice.invoice}</TableCell>
-                                <TableCell>{invoice.paymentStatus}</TableCell>
-                                <TableCell>{invoice.paymentMethod}</TableCell>
-                                <TableCell className="text-left">{invoice.totalAmount}</TableCell>
-                                <TableCell className="text-left">{invoice.totalAmount}</TableCell>
-                                <TableCell className="text-left">{invoice.totalAmount}</TableCell>
+                        {teamData.map((member, index) => (
+                            <TableRow key={index}>
+                                <TableCell className="font-medium">
+                                    <input className='w-[20px] h-[20px]' type="checkbox" />
+                                </TableCell>
+
+                                <TableCell className="font-medium">
+                                    <div className='flex gap-4'>
+                                        <Avatar />
+                                        <div className="text flex flex-col">
+                                            <p className='text-[#0A0D14] text-[16px]'>{member.name}</p>
+                                            <p className='text-[#525866]'>{member.email}</p>
+                                        </div>
+                                    </div>
+                                </TableCell>
+
+                                <TableCell className="font-medium">
+                                    <div className='flex gap-4'>
+                                        <div className="text flex flex-col">
+                                            <p className='font-normal text-[16px] text-[#0A0D14]'>{member.title}</p>
+                                            <p className='text-[#525866]'>{member.joinDate}</p>
+                                        </div>
+                                    </div>
+                                </TableCell>
+
+                                <TableCell className="font-medium">
+                                    <div className='flex gap-4'>
+                                        <Projecticon />
+                                        <div className="text flex flex-col">
+                                            <p>{member.projectname}</p>
+                                            <p className='text-[#525866]'>{member.projectDes}</p>
+                                        </div>
+                                    </div>
+                                </TableCell>
+
+                                <TableCell className="font-medium">
+                                    <div className='flex gap-4'>
+                                        <Documenticon />
+                                        <div className="text flex flex-col">
+                                            <p>{member.documentName}</p>
+                                            <p className='text-[#525866]'>{member.docSize}</p>
+                                        </div>
+                                    </div>
+                                </TableCell>
+
+                                <TableCell className="font-medium">
+                                    <div className='flex gap-4'>
+                                        <div className="flex items-center border-2 border-[#E2E4E9] px-3 py-1 rounded-lg gap-2 text-[#525866]">
+                                            {/* Conditionally render the status icon */}
+                                            {member.status === "Active" ? <Activeicon /> : <Absenticon />}
+                                            {member.status}
+                                        </div>
+                                        <Kebabmenu />
+                                    </div>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
+
                     <TableFooter>
                         <TableRow>
                             <TableCell colSpan={3}></TableCell>
@@ -184,7 +203,7 @@ const Teamstable = () => {
                 </Table>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Teamstable
+export default Teamstable;
