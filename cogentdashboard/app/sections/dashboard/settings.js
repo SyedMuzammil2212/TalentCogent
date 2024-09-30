@@ -2,6 +2,7 @@
 import Settings from "@/public/icons/settings";
 import React, { useState } from "react";
 import Search from "@/public/icons/serach";
+import Generalsettings from "@/app/components/generalsettings";
 
 const PSettings = () => {
   const settingOptions = [
@@ -48,11 +49,7 @@ const PSettings = () => {
           ))}
         </div>
       </div>
-      <div className="p-[10px] flex flex-col border border-[#E2E4E9] rounded-2xl w-[260px] mt-9 ">
-        <div className="px-2">
-          <p className="text-[#868C98] text-sm font-medium">SELECT MENU</p>
-        </div>
-      </div>
+      <Generalsettings/>
     </div>
   );
 };
