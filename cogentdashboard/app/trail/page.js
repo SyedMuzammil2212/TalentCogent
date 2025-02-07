@@ -1,8 +1,12 @@
 import React from 'react';
+import Navbar from "@/app/components/navbar";
 
-function Page(props) {
+function Page() {
     return (
-        <div className={" h-10 bg-red-500 w-fit  "} >Woww</div>
+        <div className={" w-full relative "} >
+            <Navbar crazy={"Logo6"} />
+
+        </div>
     );
 }
 
